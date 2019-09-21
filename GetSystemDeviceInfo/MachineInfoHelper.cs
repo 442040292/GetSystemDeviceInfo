@@ -129,10 +129,20 @@ namespace iBot.Core.Utils
                 {
                     foreach (var item in mo.Properties)
                     {
+
+                        var strValue = string.Empty;
+                        if (item.Value != null && item.Value is string[] xxxx)
+                        {
+                            strValue = "[" + string.Join(",", xxxx) + "]";
+                        }
+                        else
+                        {
+                            strValue = item.Value?.ToString();
+                        }
                         //PropertyData
                         string temp =
                             item.Name + "\t\t\t" +
-                            item.Value + "\t\t\t" +
+                            strValue + "\t\t\t" +
                             item.Type.ToString() + "\t\t\t" +
                             item.Origin + "\t\t\t" + Environment.NewLine;
                         stringBuilder.Append(temp);
@@ -244,6 +254,8 @@ namespace iBot.Core.Utils
 
         public enum DeviceInforType
         {
+            Win32_USBControllerDevice,
+            Win32_PnPEntity,
             Win32_Processor, // CPU 处理器 
             Win32_PhysicalMemory, // 物理内存条 
             Win32_Keyboard, // 键盘 

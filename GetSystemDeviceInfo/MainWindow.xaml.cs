@@ -48,7 +48,7 @@ namespace GetSystemDeviceInfo
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            textBox.Text = MachineInfoHelper.GetDiviceInfo(comboBox.SelectedValue.ToString(), false);
+            textBox.Text = MachineInfoHelper.GetDiviceInfo(comboBox.Text, false);
         }
     }
 }

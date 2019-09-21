@@ -15,8 +15,8 @@
             <Button x:Name="button" Click="Button_Click" Content="获取Win32_Processor" Margin="0" VerticalAlignment="Top" Height="26"/>
             <Button x:Name="button_Copy" Click="Button2_Click" Content="获取Win32_BaseBoard" VerticalAlignment="Top" Height="26"/>
             <Button x:Name="button_Copy1" Click="Button3_Click" Content="获取Win32_BIOS" VerticalAlignment="Top" Height="26"/>
-            <ComboBox x:Name="comboBox"/>
-            <Button x:Name="button_Copy3" Click="Search_Click" Content="{Binding ElementName=comboBox,Path=SelectedValue,StringFormat={}获取:{0}}" VerticalAlignment="Top" Height="26"/>
+            <ComboBox x:Name="comboBox" IsEditable="True"/>
+            <Button x:Name="button_Copy3" Click="Search_Click" Content="{Binding ElementName=comboBox,Path=Text,StringFormat={}获取:{0}}" VerticalAlignment="Top" Height="26"/>
 
         </StackPanel>
         <TextBox x:Name="textBox" Margin="0" TextWrapping="Wrap" Text="" Grid.Column="1"/>
